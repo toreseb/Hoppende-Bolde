@@ -16,8 +16,9 @@ class Bold{
   }
   
   void HoldBold(){
-    if (dist(mouseX,mouseY,loc.x,loc.y)<=size/2){
-      
+    if (dist(mouseX,mouseY,loc.x,loc.y)<=size/2 && mousePressed== true){
+      loc.x = mouseX;
+      loc.y = mouseY;
       vel.x=0;
       vel.y=0;
       acc.x=0;
