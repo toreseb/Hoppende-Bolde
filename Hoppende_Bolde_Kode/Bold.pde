@@ -3,7 +3,7 @@ class Bold{
   PVector loc = new PVector ();
   PVector vel = new PVector ();
   PVector acc = new PVector (1,1);
-  int size;
+  int size=20;
   
   void calc(){
     vel.add(acc);
@@ -13,7 +13,7 @@ class Bold{
   void display(){
     stroke(0);
     fill(255);
-    circle(loc.x,loc.y,20);
+    ellipse(loc.x,loc.y,size,size);
   }
   
   void HoldBold(){
@@ -26,6 +26,7 @@ class Bold{
       acc.y=0;
     }
   }
+  
 }
   
   
