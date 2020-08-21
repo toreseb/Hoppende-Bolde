@@ -2,16 +2,19 @@
 Bold bold = new Bold();
 Forces forc = new Forces();
 PImage billede;
+boolean lim=false;
 
 void setup(){
-  billede = loadImage("baggrund.jpg");
-  size(700,800);
+  billede = loadImage("baggrund2.jpg");
+  size(1200,675);
   background(255);
-  frameRate(60 );
+  frameRate(120);
 }
 
 void draw(){
-  image(billede,0,0, width, height);
+  
+  background(billede);
+  
   bold.calc();
   bold.HoldBold();
   bold.calc();
