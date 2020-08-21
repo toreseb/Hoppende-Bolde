@@ -2,6 +2,7 @@
 Bold bold = new Bold();
 Forces forc = new Forces();
 PImage billede;
+ArrayList<Bold> list = new ArrayList<Bold>();
 
 void setup(){
   billede = loadImage("baggrund.jpg");
