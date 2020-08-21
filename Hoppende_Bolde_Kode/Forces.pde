@@ -1,7 +1,7 @@
 class Forces{
   float g=0.982;
   float m = 0.1;
-  float vk = 10;
+  float vk = 1;
   PVector Ft = new PVector();
   PVector Fv = new PVector();
   
