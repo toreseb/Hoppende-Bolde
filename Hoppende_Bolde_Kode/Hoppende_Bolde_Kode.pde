@@ -10,8 +10,8 @@ void setup(){
 
 void draw(){
   background(255);
-  bold.calc();
   bold.HoldBold();
+  bold.calc();
   bold.farveSkift();
   bold.display();
   bold.checkEdges();

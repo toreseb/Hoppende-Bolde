@@ -4,20 +4,22 @@ class Bold{
   PVector acc = new PVector (0,0);
   PVector oldacc = acc;
   int size=50;
-  boolean mult=false;
+  boolean held=false;
   color c = color(255,255,255);
 
   void calc(){
-    acc.y = forc.grav();
+    if (!held){
+    acc.y += forc.grav();
     if (keyPressed){
       if (key == ' '){
-    acc.x = forc.wind(size);
+      acc.x += forc.wind(size);
+        }
       }
     }
+    println(vel);
     vel.add(acc);
     loc.add(vel);
-    println(acc);
-    
+    acc.mult(0);
   }
   void farveSkift(){
     if(keyPressed){
@@ -35,15 +37,11 @@ class Bold{
   void HoldBold(){
     if (dist(pmouseX,pmouseY,loc.x,loc.y)<=size/2 && mousePressed== true){
       loc.x = mouseX;
-      loc.y = mouseY; 
-      if (!mult){
-        oldacc = acc.copy();
-        acc.mult(0);
-        mult = true;
-      }
+      loc.y = mouseY;
+      held = true;
     }else{
-     acc = oldacc.copy(); 
-    }
+      held = false;
+    }   
   }
   
   void checkEdges(){
@@ -54,17 +52,14 @@ class Bold{
       vel.x *= -1;
       loc.x = 0+size/2;
     }
- 
     if (loc.y > height-size/2) {
       vel.y *= -1;
       loc.y = height-size/2;
-    } else if (loc.y < 0+size/2) {
+    }else if (loc.y < 0+size/2) {
       vel.y *= -1;
       loc.y = 0+size/2;
     }
   }
-  
-  
 }
   
   
