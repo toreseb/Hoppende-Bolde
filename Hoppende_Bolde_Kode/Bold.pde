@@ -1,9 +1,9 @@
 class Bold{
   PVector loc = new PVector ();
-  PVector vel = new PVector (30,0);
+  PVector vel = new PVector (3,0);
   PVector acc = new PVector (0,0);
   PVector oldacc = acc;
-  int size=20;
+  int size=50;
   boolean mult=false;
   color c = color(255,255,255);
 
@@ -47,20 +47,20 @@ class Bold{
   }
   
   void checkEdges(){
-    if (loc.x > width) {
-      loc.x = width;
+    if (loc.x > width-size/2) {
+      loc.x = width-size/2;
       vel.x *= -1;
-    } else if (loc.x < 0) {
+    } else if (loc.x < 0+size/2) {
       vel.x *= -1;
-      loc.x = 0;
+      loc.x = 0+size/2;
     }
  
-    if (loc.y > height) {
+    if (loc.y > height-size/2) {
       vel.y *= -1;
-      loc.y = height;
-    } else if (loc.y < 0) {
+      loc.y = height-size/2;
+    } else if (loc.y < 0+size/2) {
       vel.y *= -1;
-      loc.y = 0;
+      loc.y = 0+size/2;
     }
   }
   

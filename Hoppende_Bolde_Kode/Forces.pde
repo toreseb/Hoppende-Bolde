@@ -1,5 +1,5 @@
 class Forces{
-  float g=9.82;
+  float g=0.982;
   float m = 0.1;
   float vk = 10;
   PVector Ft = new PVector();
