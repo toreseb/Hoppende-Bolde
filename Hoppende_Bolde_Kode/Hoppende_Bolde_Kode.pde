@@ -9,6 +9,7 @@ void setup(){
 void draw(){
   background(255);
   bold.calc();
+  bold.HoldBold();
   bold.display();
   
 }
