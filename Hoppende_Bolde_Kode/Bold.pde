@@ -1,8 +1,8 @@
 
 class Bold{
   PVector loc = new PVector ();
-  PVector vel = new PVector ();
-  PVector acc = new PVector (1,1);
+  PVector vel = new PVector (30,0);
+  PVector acc = new PVector (0,1);
   int size=20;
   
   void calc(){
@@ -27,6 +27,23 @@ class Bold{
     }
   }
   
+  void checkEdges(){
+    if (loc.x > width) {
+      loc.x = width;
+      vel.x *= -1;
+    } else if (loc.x < 0) {
+      vel.x *= -1;
+      loc.x = 0;
+    }
+ 
+    if (loc.y > height) {
+      vel.y *= -1;
+      loc.y = height;
+    } else if (loc.y < 0) {
+      vel.y *= -1;
+      loc.y = 0;
+    }
+  }
 }
   
   
