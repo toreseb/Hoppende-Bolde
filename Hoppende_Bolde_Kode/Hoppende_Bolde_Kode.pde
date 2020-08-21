@@ -1,11 +1,14 @@
 
+Bold bold = new Bold();
 
 void setup(){
-  size(1000,1000);
+  size(700,700);
   background(255);
 }
 
 void draw(){
-  
+  background(255);
+  bold.calc();
+  bold.display();
   
 }

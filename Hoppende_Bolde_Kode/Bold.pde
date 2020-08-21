@@ -1,12 +1,13 @@
-  
+
 class Bold{
   PVector loc = new PVector ();
   PVector vel = new PVector ();
-  PVector acc = new PVector ();
+  PVector acc = new PVector (1,1);
   int size;
   
-  Bold(){
-    
+  void calc(){
+    vel.add(acc);
+    loc.add(vel);
   }
   
   void display(){
