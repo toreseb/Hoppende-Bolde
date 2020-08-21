@@ -14,9 +14,8 @@ void draw(){
   image(billede,0,0, width, height);
   bold.calc();
   bold.HoldBold();
+  bold.calc();
   bold.farveSkift();
   bold.display();
   bold.checkEdges();
-  
-  
 }
