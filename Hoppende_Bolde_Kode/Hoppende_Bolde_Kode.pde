@@ -26,7 +26,6 @@ void draw(){
   
   background(billede);
   for(int i =0;i<list.size();i++){
-    println(list);
     Bold b = list.get(i);
     b.calc();
     b.HoldBold();
@@ -34,5 +33,6 @@ void draw(){
     b.farveSkift();
     b.display();
     b.checkEdges();
+    b.collision();
   }
 }

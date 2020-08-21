@@ -5,6 +5,7 @@ class Bold{
   PVector oldacc = acc;
   int size=50;
   boolean held=false;
+  boolean in = false;
   color c = color(255,255,255);
 
   void calc(){
@@ -16,7 +17,7 @@ class Bold{
         }
       }
     }
-    println(vel);
+    
     vel.add(acc);
     loc.add(vel);
     acc.mult(0);
@@ -60,6 +61,19 @@ class Bold{
       loc.y = 0+size/2;
     }
   }
+  void collision(){
+    for(int i=0 ;i<list.size();i++){
+      Bold b = list.get(i);
+      PVector nV = PVector.sub(b.loc,loc);
+      
+      
+      if (dist(loc.x,loc.y,b.loc.x,b.loc.y)<= size&&dist(loc.x,loc.y,b.loc.x,b.loc.y)!=0){
+        vel.x=-vel.x;
+      }
+    }
+    
+  }
+  
 }
   
   
