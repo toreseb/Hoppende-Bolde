@@ -11,7 +11,9 @@ void draw(){
   background(255);
   bold.calc();
   bold.HoldBold();
+  bold.farveSkift();
   bold.display();
   bold.checkEdges();
+  
   
 }
