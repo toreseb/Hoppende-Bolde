@@ -5,6 +5,16 @@ class Bold{
   PVector acc = new PVector ();
   int size;
   
+  Bold(){
+    
+  }
+  
+  void display(){
+    stroke(0);
+    fill(255);
+    circle(loc.x,loc.y,20);
+  }
+  
   void HoldBold(){
     if (dist(mouseX,mouseY,loc.x,loc.y)<=size/2){
       
