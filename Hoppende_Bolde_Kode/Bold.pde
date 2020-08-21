@@ -1,8 +1,8 @@
 
 class Bold{
   PVector loc = new PVector ();
-  PVector vel = new PVector ();
-  PVector acc = new PVector (0.01,0.01);
+  PVector vel = new PVector (30,0);
+  PVector acc = new PVector (0,1);
   PVector oldacc = acc;
   int size=20;
   boolean mult=false;
