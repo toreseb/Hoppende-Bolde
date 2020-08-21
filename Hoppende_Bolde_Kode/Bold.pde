@@ -1,16 +1,22 @@
-
 class Bold{
   PVector loc = new PVector ();
   PVector vel = new PVector (30,0);
-  PVector acc = new PVector (0,1);
+  PVector acc = new PVector (0,0);
   PVector oldacc = acc;
   int size=20;
   boolean mult=false;
 
   void calc(){
+    acc.y = forc.grav();
+    if (keyPressed){
+      if (key == ' '){
+    acc.x = forc.wind(size);
+      }
+    }
     vel.add(acc);
     loc.add(vel);
-    println(vel);
+    println(acc);
+    
   }
   void display(){
     

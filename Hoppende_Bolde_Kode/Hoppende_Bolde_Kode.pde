@@ -1,5 +1,6 @@
 
 Bold bold = new Bold();
+Forces forc = new Forces();
 
 void setup(){
   size(700,800);
