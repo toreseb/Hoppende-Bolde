@@ -7,7 +7,7 @@ class Ground {
   PVector bvel2 = new PVector();
   Ground[] others;
   
-  void collision(){
+  void bounce(){
     for (int i = 1; i < list.size(); i++){
       Bold b = list.get(i);
       float dx = x-b.loc.x;

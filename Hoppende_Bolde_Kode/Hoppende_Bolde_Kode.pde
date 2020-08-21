@@ -31,10 +31,9 @@ void draw(){
   for(int i =0;i<listg.size();i++){
     Ground g = listg.get(i);
     g.display();
-    g.collision();
+    g.bounce();
   }
   for(int i =0;i<list.size();i++){
-    println(list);
     Bold b = list.get(i);
     
     b.calc();
@@ -43,6 +42,6 @@ void draw(){
     b.farveSkift();
     b.display();
     b.checkEdges();
-    
+    b.collision();
   }
 }
