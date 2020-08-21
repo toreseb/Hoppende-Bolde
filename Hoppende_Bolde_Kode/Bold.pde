@@ -6,13 +6,14 @@ class Bold{
   PVector oldacc = acc;
   int size=20;
   boolean mult=false;
-  
+
   void calc(){
     vel.add(acc);
     loc.add(vel);
     println(vel);
   }
   void display(){
+    
     stroke(0);
     fill(255);
     ellipse(loc.x,loc.y,size,size);
@@ -28,6 +29,24 @@ class Bold{
       }
     }else{
      acc = oldacc.copy(); 
+    }
+  }
+  
+  void checkEdges(){
+    if (loc.x > width) {
+      loc.x = width;
+      vel.x *= -1;
+    } else if (loc.x < 0) {
+      vel.x *= -1;
+      loc.x = 0;
+    }
+ 
+    if (loc.y > height) {
+      vel.y *= -1;
+      loc.y = height;
+    } else if (loc.y < 0) {
+      vel.y *= -1;
+      loc.y = 0;
     }
   }
 }

@@ -2,7 +2,7 @@
 Bold bold = new Bold();
 
 void setup(){
-  size(700,700);
+  size(700,800);
   background(255);
 }
 
@@ -11,5 +11,6 @@ void draw(){
   bold.calc();
   bold.HoldBold();
   bold.display();
+  bold.checkEdges();
   
 }
