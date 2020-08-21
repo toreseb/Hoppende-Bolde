@@ -6,16 +6,25 @@ class Bold{
   PVector oldacc = acc;
   int size=20;
   boolean mult=false;
+  color c = color(255,255,255);
 
   void calc(){
     vel.add(acc);
     loc.add(vel);
     println(vel);
   }
+  void farveSkift(){
+    if(keyPressed){
+      if(key == 'f' || key == 'F'){
+        c = color(random(0,255),random(0,255),random(0,255));
+      }
+    }
+  }
+  
   void display(){
     
     stroke(0);
-    fill(255);
+    fill(c);
     ellipse(loc.x,loc.y,size,size);
   }
   void HoldBold(){
@@ -49,6 +58,8 @@ class Bold{
       loc.y = 0;
     }
   }
+  
+  
 }
   
   
