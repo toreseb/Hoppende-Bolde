@@ -11,6 +11,7 @@ class Bold{
   }
   
   void display(){
+    
     stroke(0);
     fill(255);
     ellipse(loc.x,loc.y,size,size);
