@@ -12,7 +12,6 @@ class Bold{
   void calc(){
     if (!held){
     acc.y = forc.grav();
-    acc.x = 0;
     if (keyPressed){
       if (key == ' '){
       acc.x += forc.wind(size);
@@ -73,6 +72,7 @@ class Bold{
   }
   void collision(){
     for(int i=0 ;i<list.size();i++){
+      // dette er meget svært at forklarre. Vektoren nV er lavet, hvor den roteres 90 grader, og hastighedsvektoren spejles i den.
       Bold b = list.get(i);
       PVector nV = PVector.sub(b.loc,loc);
       nV.rotate(-PI/2);

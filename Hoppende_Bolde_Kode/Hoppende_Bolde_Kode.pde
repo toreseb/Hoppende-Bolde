@@ -1,4 +1,10 @@
 
+/*
+Link til video:https://web.microsoftstream.com/video/f7c5b607-c171-4a6f-ac54-712fcd241b4b
+*/
+
+
+
 Bold bold = new Bold();
 Forces forc = new Forces();
 ArrayList<Ground> listg = new ArrayList<Ground>();
@@ -6,7 +12,7 @@ int gamount=5;
 PImage billede;
 boolean lim=false;
 boolean press=false;
-boolean ground=false;
+boolean ground=true;
 ArrayList<Bold> list = new ArrayList<Bold>();
 
 

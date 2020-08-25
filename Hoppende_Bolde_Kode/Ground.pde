@@ -29,26 +29,6 @@ class Ground {
       }
       
     }
-      /*
-      Bold b = list.get(i);
-      float dx = x-b.loc.x;
-      float dy = y-b.loc.y;
-      float dis = sqrt(dx*dx+dy*dy);
-      float min = x/2-b.size/2;
-      if(dist<min){
-        float angle = atan2(dy, dx);
-        float targetX = b.loc.x + cos(angle) * min;
-        float targetY = b.loc.y + sin(angle) * min;
-        float ax = (targetX - x) * 0.05;
-        float ay = (targetY - y) * 0.05;
-        bvel2 = b.vel.copy();
-        bvel2.x -= ax;
-        bvel2.y -= ay;
-        b.vel.set(bvel2);
-        
-      }
-    }
-    */
   }
   
   void display(){
