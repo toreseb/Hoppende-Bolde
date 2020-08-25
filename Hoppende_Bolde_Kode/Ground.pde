@@ -19,6 +19,8 @@ class Ground {
       
       if (frameCount-fCount >= 5){ 
         if (dist(b.loc.x,b.loc.y,gloc.x,gloc.y)<= d/2+b.size/2 &&dist(b.loc.x,b.loc.y,gloc.x,gloc.y)!=0){
+          //Dette if statement finder distancen mellem bolden og bunden og ser om den er mindre end radius af bold og bund
+          //Derudover er der også et statement der tjekker at det ikke giver 0, da dette vil give en fejl
           println(rota);
           b.vel.rotate(rota*2);
           fCount=frameCount;
@@ -29,26 +31,6 @@ class Ground {
       }
       
     }
-      /*
-      Bold b = list.get(i);
-      float dx = x-b.loc.x;
-      float dy = y-b.loc.y;
-      float dis = sqrt(dx*dx+dy*dy);
-      float min = x/2-b.size/2;
-      if(dist<min){
-        float angle = atan2(dy, dx);
-        float targetX = b.loc.x + cos(angle) * min;
-        float targetY = b.loc.y + sin(angle) * min;
-        float ax = (targetX - x) * 0.05;
-        float ay = (targetY - y) * 0.05;
-        bvel2 = b.vel.copy();
-        bvel2.x -= ax;
-        bvel2.y -= ay;
-        b.vel.set(bvel2);
-        
-      }
-    }
-    */
   }
   
   void display(){
