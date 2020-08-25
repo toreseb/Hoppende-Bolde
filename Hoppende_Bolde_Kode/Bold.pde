@@ -4,6 +4,7 @@ class Bold{
   PVector acc = new PVector (0,0);
   PVector oldacc = acc;
   int size=50;
+  int fCount=0;
   boolean held=false;
   boolean in = false;
   color c = color(255,255,255);
@@ -26,6 +27,7 @@ class Bold{
       vel.y +=forc.air(size).y;
     }
     loc.add(vel);
+    acc.mult(0);
     
     
   }
@@ -41,6 +43,7 @@ class Bold{
     stroke(0);
     fill(c);
     ellipse(loc.x,loc.y,size,size);
+    
   }
   void HoldBold(){
     if (dist(pmouseX,pmouseY,loc.x,loc.y)<=size/2 && mousePressed== true){
@@ -74,10 +77,12 @@ class Bold{
       PVector nV = PVector.sub(b.loc,loc);
       nV.rotate(-PI/2);
       float rota = PVector.angleBetween(loc,nV);
-      
-      if (dist(loc.x,loc.y,b.loc.x,b.loc.y)<= size&&dist(loc.x,loc.y,b.loc.x,b.loc.y)!=0){
-        vel.rotate(rota);
+      if (frameCount-fCount>=10){
+        if (dist(loc.x,loc.y,b.loc.x,b.loc.y)<= size&&dist(loc.x,loc.y,b.loc.x,b.loc.y)!=0){
+          vel.rotate(rota);
+          fCount = frameCount;
         
+        }
       }
     }
     
