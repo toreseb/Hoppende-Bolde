@@ -12,7 +12,7 @@ int gamount=5;
 PImage billede;
 boolean lim=false;
 boolean press=false;
-boolean ground=true;
+boolean ground=false;
 ArrayList<Bold> list = new ArrayList<Bold>();
 
 
