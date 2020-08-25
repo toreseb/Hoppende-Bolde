@@ -19,8 +19,9 @@ class Forces{
    return Fv.x;
  }
   PVector air(int size){
-  Fa.x = -(size/10*airres);
-  Fa.y = -(size/10*airres);
+  Fa.x = -(size/10*airres)/50;
+  Fa.y = -(size/10*airres)/50;
+  println(Fa);
   return Fa;
   }
 }

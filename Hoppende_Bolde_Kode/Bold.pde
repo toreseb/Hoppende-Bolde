@@ -10,24 +10,23 @@ class Bold{
 
   void calc(){
     if (!held){
-    acc.y += forc.grav();
+    acc.y = forc.grav();
+    acc.x = 0;
     if (keyPressed){
       if (key == ' '){
       acc.x += forc.wind(size);
         }
       }
     }
-    if (acc.x+forc.air(size).x >=0){
-      acc.x +=forc.air(size).x;
-    }
-    if (acc.y+forc.air(size).y >=0){
-      println(acc);
-      acc.y +=forc.air(size).y;
-    }
-    
     vel.add(acc);
+    if (vel.x+forc.air(size).x/10 >=0){
+      vel.x +=forc.air(size).x/10;
+    }
+    if (vel.y+forc.air(size).y >=0){
+      vel.y +=forc.air(size).y;
+    }
     loc.add(vel);
-    acc.mult(0);
+    
     
   }
   void farveSkift(){
