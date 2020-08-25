@@ -17,10 +17,18 @@ class Bold{
         }
       }
     }
+    if (acc.x+forc.air(size).x >=0){
+      acc.x +=forc.air(size).x;
+    }
+    if (acc.y+forc.air(size).y >=0){
+      println(acc);
+      acc.y +=forc.air(size).y;
+    }
     
     vel.add(acc);
     loc.add(vel);
     acc.mult(0);
+    
   }
   void farveSkift(){
     if(keyPressed){
@@ -65,13 +73,20 @@ class Bold{
     for(int i=0 ;i<list.size();i++){
       Bold b = list.get(i);
       PVector nV = PVector.sub(b.loc,loc);
-      
+      nV.rotate(-PI/2);
+      float rota = PVector.angleBetween(loc,nV);
       
       if (dist(loc.x,loc.y,b.loc.x,b.loc.y)<= size&&dist(loc.x,loc.y,b.loc.x,b.loc.y)!=0){
-        vel.x=-vel.x;
+        vel.rotate(rota);
+        
       }
     }
     
+  }
+  void reset(){
+    for(int i=0 ;i<list.size();i++){
+      list.remove(i);
+    }
   }
   
 }

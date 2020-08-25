@@ -2,15 +2,19 @@
 Bold bold = new Bold();
 Forces forc = new Forces();
 ArrayList<Ground> listg = new ArrayList<Ground>();
+int gamount=5;
 PImage billede;
 boolean lim=false;
 boolean press=false;
+boolean ground=true;
 ArrayList<Bold> list = new ArrayList<Bold>();
 
 
 void setup(){
-  for (int i = 0; i < 20; i++){
+  if (ground){
+    for (int i = 0; i < gamount; i++){
     listg.add(new Ground());
+    }
   }
   billede = loadImage("baggrund2.jpg");
   size(1200,675);
@@ -43,5 +47,8 @@ void draw(){
     b.display();
     b.checkEdges();
     b.collision();
+    if(keyPressed&&key=='r'){
+     b.reset(); 
+    }
   }
 }
